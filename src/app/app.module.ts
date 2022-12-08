@@ -8,7 +8,10 @@ import { TvDramaComponent } from './tv-drama/tv-drama.component';
 import { ExcitingMovieComponent } from './exciting-movie/exciting-movie.component';
 import { FooterComponent } from './footer/footer.component';
 import { LatestMovieComponent } from './latest-movie/latest-movie.component';
-import { MovieListComponent } from './latest-movie/movie-list/movie-list.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { LatestMovieListComponent } from './latest-movie/latest-movie-list/latest-movie-list.component';
+import { ExcitingMovieListComponent } from './exciting-movie/exciting-movie-list/exciting-movie-list.component';
+import { TvDramaListComponent } from './tv-drama/tv-drama-list/tv-drama-list.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,12 @@ import { MovieListComponent } from './latest-movie/movie-list/movie-list.compone
     ExcitingMovieComponent,
     FooterComponent,
     LatestMovieComponent,
-    MovieListComponent
+    LatestMovieListComponent,
+    ExcitingMovieListComponent,
+    TvDramaListComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, IvyCarouselModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
