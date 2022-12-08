@@ -1,21 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/movie.service';
 
 @Component({
   selector: 'app-latest-movie-list',
   templateUrl: './latest-movie-list.component.html',
   styleUrls: ['./latest-movie-list.component.css'],
 })
-export class LatestMovieListComponent {
-  images = [
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-    { path: '/assets/banner1.jpg' },
-  ];
+export class LatestMovieListComponent implements OnInit {
+  latestMovie: object[] = [];
+  constructor(private movieService: MovieService) {}
+
+  ngOnInit(): void {
+    this.latestMovie = this.movieService.showLatestMovie();
+  }
 }
